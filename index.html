@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Log File Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Log File Analyzer — Intrusion Detection</h1>
+    <p>Upload a log file (Apache, syslog, auth.log, etc.). Suspicious activity will be highlighted.</p>
+
+    {% if error %}
+      <div class="alert error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="logfile" accept=".log,.txt"><br><br>
+      <button type="submit">Analyze</button>
+    </form>
+
+    <hr>  
+  </div>
+</body>
+</html>
