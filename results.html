@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Analysis Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2">
+</head>
+<body class="{{ 'danger' if attack_detected else 'safe' }}">
+  <div class="container {{ 'danger' if attack_detected else 'safe' }}">
+    <a class="back" href="{{ url_for('index') }}">&larr; Back to Upload</a>
+    <h1>Analysis Result</h1>
+
+    <p class="meta">Total lines in file: <strong>{{ total_lines }}</strong></p>
+
+    {% if suspicious %}
+      <div class="summary">Total suspicious events: <strong>{{ suspicious|length }}</strong></div>
+
+      {% for attack, line in suspicious %}
+        <div class="card {{ 'brute' if 'Brute' in attack else ('sql' if 'SQL' in attack else ('xss' if 'XSS' in attack else 'unauthorized')) }}">
+            <div class="card-header">
+                <span class="type">{{ attack }}</span>
+            </div>
+            <div class="ip">{{ line }}</div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="summary safe-summary">No suspicious activity detected ✅</div>
+    {% endif %}
+  </div>
+</body>
+</html>
