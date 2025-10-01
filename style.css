@@ -1,0 +1,87 @@
+/* Cybersecurity Dark Theme */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* dark navy */
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e0e0e0; /* mild text */
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 700px;
+  background: rgba(20, 20, 30, 0.95); /* dark card */
+  border-radius: 12px;
+  padding: 35px 45px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 150, 0.1);
+  border: 1px solid rgba(0, 255, 150, 0.2); /* green glow border */
+}
+
+/* Title */
+h1 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #66ffcc; /* mild neon green */
+  text-shadow: 0 0 8px rgba(102, 255, 204, 0.6);
+}
+
+/* File Upload Input */
+input[type="file"] {
+  display: block;
+  margin: 20px auto;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+/* Choose File Button */
+input[type="file"]::-webkit-file-upload-button {
+  background: linear-gradient(135deg, #0f9b0f, #00b09b); /* green gradient */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 8px rgba(0, 255, 150, 0.3);
+}
+input[type="file"]::-webkit-file-upload-button:hover {
+  background: linear-gradient(135deg, #00b09b, #0f9b0f);
+  transform: scale(1.05);
+}
+
+/* Analyze Button */
+button {
+  background: linear-gradient(135deg, #41295a, #2F0743); /* purple cyber */
+  color: #f0f0f0;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(150, 0, 255, 0.3);
+}
+button:hover {
+  background: linear-gradient(135deg, #2F0743, #41295a);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(150, 0, 255, 0.5);
+}
+
+/* Links and Alerts */
+a, .alert {
+  color: #00ffc6; /* neon cyan */
+}
+.alert.error {
+  background: rgba(255, 50, 50, 0.15);
+  border: 1px solid rgba(255, 50, 50, 0.3);
+  padding: 10px;
+  border-radius: 6px;
+}
